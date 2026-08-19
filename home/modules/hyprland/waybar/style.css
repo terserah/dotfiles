@@ -1,0 +1,206 @@
+* {
+  font-family: "Inter", "Cantarell", "Symbols Nerd Font", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ===========================
+   CATNUX COLORS
+=========================== */
+
+@define-color bg rgba(24,24,28,.72);
+@define-color background transparent;
+@define-color surface rgba(32,34,40,.92);
+@define-color text #ECECEC;
+@define-color muted #A0A6B0;
+@define-color accent #62A0EA;
+@define-color danger #ff6b6b;
+
+/* ===========================
+   WAYBAR
+=========================== */
+
+/* window#waybar {
+  background: transparent;
+  color: @text;
+  border: none;
+} */
+
+window#waybar {
+  background: rgba(24, 24, 28, 0);
+  color: @text;
+  border: none;
+  min-height: 0;
+}
+/* ===========================
+  BASE MODULE
+=========================== */
+#workspaces,
+#window,
+#clock,
+#network,
+#pulseaudio,
+#backlight,
+#idle_inhibitor,
+#battery,
+#tray,
+#custom-power {
+  background: @surface;
+  color: @text;
+  border-radius: 14px;
+  margin: 2px;
+  padding: 0 12px;
+}
+
+
+/* ===========================
+  Worspace MODULE
+=========================== */
+#workspaces {
+  background: @surface;
+  padding: 0 3px;
+  border-radius: 14px;
+}
+
+#workspaces button {
+  background: @transparent;
+  color: @muted;
+
+  margin: 0;
+  padding: 2px 6px;
+
+  border-radius: 10px;
+
+  transition:
+      background-color .15s ease,
+      color .15s ease;
+}
+#workspaces button:first-child {
+    margin-left: 3px;
+}
+
+#workspaces button:last-child {
+    margin-right: 3px;
+}
+
+#workspaces button:hover {
+  background: rgba(255,255,255,.03);
+  color: @text;
+}
+
+#workspaces button.active {
+  background: rgba(255,255,255,.08);
+  color: @text;
+}
+
+/* ===========================
+  WINDOW MODULE
+=========================== */
+#window {
+  color: @muted;
+  font-weight: 500;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+}
+
+/* ===========================
+  CLOCK MODULE
+=========================== */
+
+#clock {
+  color: @text;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+/* Memory Module */
+#memory {
+  color: @text;
+  font-weight: 600;
+  border-radius: 14px;
+  /* margin: 2px; */
+  padding: 0 5px;
+}
+/* ===========================
+  DEVICE GROUP MODULE
+=========================== */
+
+
+#backlight,
+#battery,
+#pulseaudio {
+  margin: 2px 0;
+}
+
+
+#backlight {
+    /* border-radius: 0; */
+    margin-left: 2px;
+
+    border-radius: 14px 0 0 14px;
+}
+
+#battery {
+    margin-right: 2px;
+
+    border-radius: 0 14px 14px 0;
+}
+
+#pulseaudio {
+    border-radius: 0;
+    
+}
+
+#idle_inhibitor {
+    /* padding: 0 10px;
+    margin: 2px 6px 2px 2px; */
+    color: @muted;
+    /* border-radius: 14px; */
+}
+
+#idle_inhibitor.activated {
+    color: @accent;
+}
+
+/* ==========================================
+  BATTERY
+========================================== */
+
+#battery {
+    color: @text;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @accent;
+}
+
+#battery.warning {
+    color: #EBCB8B;
+}
+
+#battery.critical {
+    color: @danger;
+}
+
+/* ==========================================
+  TRAY
+========================================== */
+
+#tray {
+    padding: 0 8px;
+}
+
+/* ==========================================
+  CUSTOM POWER
+========================================== */
+#custom-power {
+    color: @danger;
+}
+
+#custom-power:hover {
+    background: rgba(255,107,107,.12);
+}
+
