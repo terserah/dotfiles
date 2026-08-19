@@ -122,6 +122,7 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
+    dnsmasq
     docker-compose
     bibata-cursors
     vim
@@ -130,6 +131,7 @@
 
   # Virt
   virtualisation.docker.enable = true;
+  programs.virt-manager.enable = true;
   virtualisation.libvirtd.enable = true;
 
   fonts.packages = with pkgs; [
