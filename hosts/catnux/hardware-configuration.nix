@@ -25,6 +25,12 @@
       options = [ "subvol=@data" ];
     };
 
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/da0bc549-431f-4d98-9a9e-1405a3ae1696";
+      fsType = "btrfs";
+      options = [ "subvol=@home" ];
+    };
+
   fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/da0bc549-431f-4d98-9a9e-1405a3ae1696";
       fsType = "btrfs";
@@ -38,7 +44,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/D1FC-A024";
+    { device = "/dev/disk/by-uuid/6EDC-2BE6";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };

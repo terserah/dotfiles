@@ -91,7 +91,14 @@
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing = {
+  enable = true;
+  drivers = with pkgs; [
+    cups-filters
+    cups-browsed
+    epson-201401w # Printer kampus epson l360
+  ];
+};
 
   # Enable sound.
   # services.pulseaudio.enable = true;

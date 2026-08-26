@@ -15,7 +15,9 @@
   ];
 
   home.packages = with pkgs; [
+    android-studio
     jetbrains.datagrip
+    heroic
     opencode
     vscode
   ];
