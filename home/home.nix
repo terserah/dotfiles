@@ -9,6 +9,7 @@
   imports = [
     ./modules/rofi.nix
     ./modules/kitty.nix
+    ./modules/obs.nix
     ./modules/tmux.nix
     ./modules/hyprland
     ./modules/zsh
