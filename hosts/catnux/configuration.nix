@@ -13,6 +13,7 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelParams = [ "quiet" "splash" ];
 
   networking.hostName = "catnux"; # Define your hostname.
 
@@ -54,23 +55,42 @@
 
   services.tlp = {
     enable = true;
+    pd.enable = true;
     settings = {
       STOP_CHARGE_THRESH_BAT0 = 80;
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_BOOST_ON_AC = "1";
+      CPU_BOOST_ON_BAT = "0";
     };
   };
 
   # sddm
-  services.displayManager.sddm = {
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   settings = {
+  #     Theme = {
+  #       CursorTheme = "Bibata-Modern-Ice";
+  #       CursorSize = 24;
+  #     };
+  #   };
+
+  #   # Enables experimental Wayland support
+  #   wayland.enable = true;
+  # };
+
+  # greetd
+  services.greetd = {
     enable = true;
     settings = {
-      Theme = {
-        CursorTheme = "Bibata-Modern-Ice";
-        CursorSize = 24;
+      default_session = {
+        # Memanggil sesi hyprland via UWSM
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd 'uwsm start hyprland-uwsm.desktop'";
+        user = "greeter";
       };
     };
-
-    # Enables experimental Wayland support
-    wayland.enable = true;
   };
 
   # Hyprland
@@ -132,6 +152,7 @@
     dnsmasq
     docker-compose
     bibata-cursors
+    tuigreet
     vim
     wget
   ];

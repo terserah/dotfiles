@@ -19,6 +19,7 @@
     jetbrains.datagrip
     heroic
     opencode
+    thunar
     vscode
   ];
 
