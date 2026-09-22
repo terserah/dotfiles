@@ -5,6 +5,7 @@
     ../../modules/home/git.nix
     ../../modules/home/gtk.nix
     ../../modules/home/kitty.nix
+    ../../modules/home/noctalia.nix
     ../../modules/home/rofi.nix
     ../../modules/home/session.nix
     ../../modules/home/tmux.nix

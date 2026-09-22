@@ -5,6 +5,7 @@
 	];
 
 	programs.noctalia = {
+		systemd.enable = true;
 		enable = true;
 		settings = {
 			theme = {
