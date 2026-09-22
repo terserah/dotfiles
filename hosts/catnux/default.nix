@@ -15,6 +15,8 @@
     ../../modules/nixos/services/docker.nix
     ../../modules/nixos/boot.nix
     ../../modules/nixos/gaming.nix
+
+    ../../packages/flutter.nix
   ];
 
   networking.hostName = "catnux";
