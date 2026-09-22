@@ -1,0 +1,108 @@
+* {
+    bg:       #0F1117;
+    bg-alt:   #1A1D24;
+
+    fg:       #ECECEC;
+
+    accent:   #62A0EA;
+
+    border:   #2C313A;
+
+    selected: #2A3442;
+
+    font: "Inter 11";
+}
+
+window {
+    width: 42%;
+
+    background-color: @bg;
+
+    border: 1;
+    border-radius: 18;
+
+    border-color: @border;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+
+    padding: 18;
+    spacing: 10;
+
+    background-color: transparent;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+
+    padding: 10;
+    border-radius: 10;
+
+    background-color: @bg-alt;
+}
+
+prompt {
+    padding: 2;
+    border-radius: 6;
+    margin: 0 8px 0 0;
+
+    background-color: @selected;
+    text-color: @accent;
+}
+
+entry {
+    text-color: @fg;
+    background-color: transparent;
+}
+
+listview {
+    lines: 8;
+    spacing: 2;
+
+    scrollbar: false;
+
+    background-color: transparent;
+}
+
+element {
+    padding: 6;
+
+    border-radius: 10;
+
+    background-color: @bg-alt;
+    text-color: #ffffff;
+
+    children: [ element-icon, element-text ];
+
+    spacing: 8;
+}
+
+element normal.normal {
+    background-color: @bg-alt;
+    text-color: @fg;
+}
+
+element alternate.normal {
+    background-color: @bg-alt;
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @fg;
+}
+
+element-icon {
+    size: 18px;
+
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+
+    text-color: @fg;
+
+    vertical-align: 0.5;
+}

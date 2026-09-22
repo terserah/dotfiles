@@ -1,0 +1,156 @@
+/* Simple GNOME-like Waybar — flat hitam, teks putih, tanpa rainbow.
+ * Backup asli: style.css.bak
+ * Font: Adwaita/Cantarell untuk teks, Nerd Font + FontAwesome untuk ikon. */
+
+* {
+    font-family: "Adwaita Sans", "Cantarell", "JetBrainsMono Nerd Font", "Font Awesome 7 Free", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #000000;
+    color: #eeeeec;
+    border-bottom: none;
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+
+
+button {
+    box-shadow: none;
+    border: none;
+    border-radius: 6px;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: none;
+}
+
+/* Semua modul: transparan, padding ramping ala GNOME */
+#workspaces,
+#window,
+#clock,
+#battery,
+#backlight,
+#pulseaudio,
+#tray,
+#idle_inhibitor,
+#custom-power {
+    background: transparent;
+    color: #eeeeec;
+    padding: 0 10px;
+    margin: 0;
+    border-radius: 0;
+}
+
+#window {
+    padding: 0 10px;
+    color: #e5e9f0;
+    background-color: rgba(255, 255, 255, 0.05); /* Sedikit highlight transparan untuk icon aktif */
+    border-radius: 4px;
+    margin: 3px 5px;
+}
+
+/* Workspaces ala GNOME: angka redup, aktif putih */
+#workspaces button {
+    padding: 0 8px;
+    margin: 4px 1px;
+    background-color: transparent;
+    color: #8a8a8a;
+    border-radius: 6px;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    box-shadow: none;
+}
+
+#workspaces button.urgent {
+    background-color: #c01c28;
+    color: #ffffff;
+}
+
+/* Hover indikator kanan */
+#clock:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover,
+#idle_inhibitor:hover,
+#custom-power:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Jam di tengah sedikit tegas */
+#clock {
+    font-weight: bold;
+    padding: 0 12px;
+}
+
+/* Baterai: teks saja, merah kalau kritis */
+#battery.warning {
+    color: #f5c211;
+}
+
+#battery.critical:not(.charging) {
+    color: #ff6565;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #8ff0a4;
+}
+
+#pulseaudio.muted {
+    color: #8a8a8a;
+}
+
+#tray {
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #c01c28;
+}
+
+#idle_inhibitor.activated {
+    color: #ffffff;
+}
+
+#idle_inhibitor.deactivated {
+    color: #8a8a8a;
+}
+
+#custom-power {
+    padding-right: 14px;
+    color: #eeeeec;
+}

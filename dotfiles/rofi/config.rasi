@@ -1,0 +1,16 @@
+configuration {
+    modi: "drun,run,window";
+
+    show-icons: true;
+
+    display-drun: "Apps";
+    display-window: "Windows";
+    display-run: "Run";
+
+    drun-display-format: "{name}";
+
+    disable-history: false;
+    hover-select: true;
+}
+
+@theme "theme.rasi"

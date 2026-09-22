@@ -1,0 +1,105 @@
+// Simple GNOME-like bar — hanya modul yang sudah ada sebelumnya.
+// Backup asli: config.jsonc.bak
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "spacing": 4,
+
+    // Ala GNOME: kiri = activities/workspaces + app, tengah = jam, kanan = indikator
+    "modules-left": [
+        "niri/workspaces",
+        "niri/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "tray",
+        "custom/power"
+    ],
+
+    "niri/workspaces": {
+        "format": "{index}",
+        "disable-scroll": true,
+        "all-outputs": false
+    },
+    "niri/window": {
+        "format": "{title}",
+        "max-length": 50,
+        "icon": true,
+        "icon-size": 16, 
+        "separate-outputs": true,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "Firefox",
+            "(.*) - Alacritty": "$1"
+        }
+    },
+    "clock": {
+        "format": "{:%a %d %b %H:%M}",
+        "format-alt": "{:%Y-%m-%d %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰒳",
+            "deactivated": "󰒲"
+        },
+        "tooltip": true
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "󰝟 {icon}",
+        "format-muted": "󰝟",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "tooltip": true
+    },
+    "backlight": {
+        "device": "amdgpu_bl1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰃞", "󰃟", "󰃠", "󰃡", "󰃢", "󰃣", "󰃤", "󰃥", "󰃦"],
+        "tooltip": true
+    },
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰂃"],
+        "tooltip": true
+    },
+    "tray": {
+        "spacing": 8
+    },
+    "custom/power": {
+        "format": "⏻ ",
+        "tooltip": "Power menu",
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "systemctl poweroff",
+            "reboot": "systemctl reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate",
+            "lock": "swaylock",
+            "logout": "niri msg action quit"
+        }
+    }
+}
