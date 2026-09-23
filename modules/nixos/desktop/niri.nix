@@ -8,6 +8,19 @@
 
   hardware.bluetooth.enable = true;
 
+  services.power-profiles-daemon.enable = false;
+  services.upower.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    # For niri
+    alacritty
+    fuzzel
+    swaylock
+    swayidle
+    swaybg
+    wl-mirror
+  ];
+
   # File Picker
   xdg.portal.config.niri = {
     "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
