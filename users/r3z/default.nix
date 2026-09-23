@@ -17,7 +17,7 @@
   home.packages = with pkgs; [
     # android-studio
     # jetbrains.datagrip
-    # opencode
+    opencode
     nautilus
     vscode
   ];
