@@ -15,6 +15,7 @@
     # For niri
     alacritty
     fuzzel
+    jq
     swaylock
     swayidle
     swaybg
