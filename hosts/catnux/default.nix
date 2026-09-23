@@ -13,13 +13,20 @@
     ../../modules/nixos/hardware/power.nix
     ../../modules/nixos/programs/apps.nix
     ../../modules/nixos/services/docker.nix
+    ../../modules/nixos/services/libvirtd.nix
     ../../modules/nixos/boot.nix
     ../../modules/nixos/gaming.nix
 
-    ../../packages/flutter.nix
+    # ../../packages/flutter.nix  # disabled sementara
   ];
 
   networking.hostName = "catnux";
+
+  # programs.flutter = {
+  #   enable = true;
+  #   user = "r3z";
+  #   addToKvmGroup = true;
+  # }; # disabled sementara
 
   users.users.r3z = {
     isNormalUser = true;
@@ -30,21 +37,12 @@
       "docker"
       "video"
       "audio"
+      "libvirtd"
     ];
     shell = pkgs.zsh;
   };
 
   environment.systemPackages = with pkgs; [
-    # For niri
-    alacritty
-    fuzzel
-    swaylock
-    swayidle
-    swaybg
-
-    # NetworkManagerApplet
-    networkmanagerapplet
-
     # For hosts
     distrobox
     dnsmasq
@@ -56,5 +54,6 @@
   ];
 
   programs.zsh.enable = true;
+  programs.nix-ld.enable = true;
   system.stateVersion = "24.11"; 
 }
