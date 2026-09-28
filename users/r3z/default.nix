@@ -15,8 +15,10 @@
   home.homeDirectory = "/home/r3z";
 
   home.packages = with pkgs; [
-    # android-studio
-    # jetbrains.datagrip
+    #android-studio
+    #jetbrains.datagrip
+    #libreoffice
+    devenv
     opencode
     nautilus
     vscode
@@ -26,7 +28,7 @@
     # Tautkan seluruh folder
     # "hypr".source = ../../dotfiles/hypr;
     "niri/config.kdl".source = ../../dotfiles/niri/config.kdl;
-    "waybar".source = ../../dotfiles/waybar;
+    #"waybar".source = ../../dotfiles/waybar;
   };
 
   programs.home-manager.enable = true;

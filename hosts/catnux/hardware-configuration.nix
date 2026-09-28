@@ -37,22 +37,10 @@
       options = [ "subvol=@nix" "compress=zstd" "noatime" ];
     };
 
-  fileSystems."/var/lib/docker" =
-    { device = "/dev/disk/by-uuid/54071867-ef1f-4b35-883e-81fbdb21f674";
-      fsType = "btrfs";
-      options = [ "subvol=@docker" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/var/lib/libvirt" =
-    { device = "/dev/disk/by-uuid/54071867-ef1f-4b35-883e-81fbdb21f674";
-      fsType = "btrfs";
-      options = [ "subvol=@vms" "compress=zstd" "noatime" ];
-    };
-
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/BDC2-35B1";
+    { device = "/dev/disk/by-uuid/0767-C7CA";
       fsType = "vfat";
-      options = [ "dmask=0077" ];
+      options = [ "umask=0077" ];
     };
 
   swapDevices = [ ];

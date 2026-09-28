@@ -16,10 +16,12 @@
     alacritty
     fuzzel
     jq
+    libX11
     swaylock
     swayidle
     swaybg
     wl-mirror
+    xwayland-satellite
   ];
 
   # File Picker
