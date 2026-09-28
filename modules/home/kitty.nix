@@ -46,47 +46,47 @@
       tab_powerline_style = "slanted";
       tab_separator = " ";
 
-      # Theme
-      background = "#100d16";
-      foreground = "#d8dee9";
+      # Theme (Everforest & Night Park Slate Palette)
+      background = "#13191c"; # Slate gelap sejajar tone jalan/malam
+      foreground = "#d0d7d1"; # Putih-kehijauan lembut
 
-      selection_background = "#2b3440";
-      selection_foreground = "#eceff4";
+      selection_background = "#27343a";
+      selection_foreground = "#e5e9f0";
 
-      cursor = "#89dceb";
+      cursor = "#e5b772"; # Terinspirasi dari pendar kuning hangat lampu taman
       cursor_text_color = "background";
 
       # black
-      color0 = "#16161e";
-      color8 = "#414868";
+      color0 = "#1a2124";
+      color8 = "#435259";
 
       # red
-      color1 = "#f7768e";
-      color9 = "#ff9e64";
+      color1 = "#e06c75";
+      color9 = "#ea838b";
 
       # green
-      color2 = "#9ece6a";
-      color10 = "#73daca";
+      color2 = "#87b098"; # Muted sage green
+      color10 = "#9ac8a9";
 
       # yellow
-      color3 = "#e0af68";
-      color11 = "#ffcb6b";
+      color3 = "#e5b772"; # Warm amber lampu jalan
+      color11 = "#f2d184";
 
       # blue
-      color4 = "#7aa2f7";
-      color12 = "#89b4fa";
+      color4 = "#5c92ad"; # Misty blue malam
+      color12 = "#72a6c1";
 
       # magenta
-      color5 = "#bb9af7";
-      color13 = "#cba6f7";
+      color5 = "#a084a1"; # Dusty purple lembut
+      color13 = "#b89eb9";
 
       # cyan
-      color6 = "#7dcfff";
-      color14 = "#89dceb";
+      color6 = "#5fa2a3"; # Teal/cyan kabut
+      color14 = "#7dbbc0";
 
       # white
-      color7 = "#c0caf5";
-      color15 = "#f5f5f5";
+      color7 = "#c5cfc9";
+      color15 = "#e6ede8";
     };
 
     keybindings = {
