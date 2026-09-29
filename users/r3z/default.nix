@@ -15,13 +15,16 @@
   home.homeDirectory = "/home/r3z";
 
   home.packages = with pkgs; [
-    #android-studio
-    #jetbrains.datagrip
-    #libreoffice
+    android-studio
     devenv
+    jetbrains.datagrip
+    libreoffice
+    obs-studio
     opencode
+    opencode-desktop
     nautilus
     vscode
+    zoom-us
   ];
 
   xdg.configFile = {

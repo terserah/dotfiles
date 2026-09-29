@@ -115,7 +115,7 @@ input {
 // https://niri-wm.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 6
+    gaps 10
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -347,8 +347,15 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"com.microsoft.VSCode"#
+    match app-id=r#"code"#
     open-maximized true
+}
+
+window-rule {
+    match app-id="Zoom Workplace" title=".*menu.*"
+    open-floating true
+    min-width 250
+    open-focused true
 }
 
 window-rule {
