@@ -11,7 +11,7 @@
       keyboard.layout = "us";
       output = {
         name = "eDP-1";
-        scale = 1;
+        scale = 1.25;
       };
     };
     cursorTheme = {
