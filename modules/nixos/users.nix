@@ -12,6 +12,7 @@
       "video"
       "disk"
       "docker"
+      "libvirtd"
     ];
     packages = with pkgs; [
       tree

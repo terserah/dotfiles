@@ -6,6 +6,7 @@
     ../../modules/nixos/boot.nix
     ../../modules/nixos/networking.nix
     ../../modules/nixos/hardware.nix
+    ../../modules/nixos/game.nix
     ../../modules/nixos/audio.nix
     ../../modules/nixos/desktop.nix
     ../../modules/nixos/virtualisation.nix

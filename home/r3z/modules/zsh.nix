@@ -32,7 +32,7 @@
         "z"
       ];
 
-      theme = "fishy";
+      theme = "philips";
     };
 
     initContent = ''
