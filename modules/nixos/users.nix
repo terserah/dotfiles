@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.zsh.enable = true;
-
+  security.sudo.wheelNeedsPassword = false;
   users.users.r3z = {
     shell = pkgs.zsh;
     isNormalUser = true;
