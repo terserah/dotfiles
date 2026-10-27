@@ -22,6 +22,7 @@
 
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
-
+  services.gvfs.enable = true;
+  
   programs.firefox.enable = true;
 }
