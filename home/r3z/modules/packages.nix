@@ -4,6 +4,8 @@
     android-studio
     vscode
     nautilus
+    mpv
+    loupe
     libreoffice
     unzip
     p7zip
