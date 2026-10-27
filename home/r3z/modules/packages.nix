@@ -8,6 +8,8 @@
     unzip
     p7zip
     jdk
+    jq
+    wl-mirror 
     nodejs
   ];
 }
