@@ -1,6 +1,8 @@
-{ ... }:
+{ inputs, ... }:
 {
   imports = [
+    inputs.nixvim.homeModules.nixvim
+    ./modules/nixvim.nix
     ./modules/alacritty.nix
     ./modules/gtk.nix
     ./modules/tmux.nix
