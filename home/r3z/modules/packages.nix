@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     android-studio
+    jetbrains.datagrip
     vscode
     nautilus
     mpv
