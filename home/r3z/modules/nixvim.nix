@@ -8,7 +8,7 @@
     nixpkgs.useGlobalPackages = true;
 
     globals = {
-      mapleader = " ";
+      mapleader = ";";
       maplocalleader = "\\";
     };
 
@@ -45,7 +45,16 @@
       swapfile = false;
     };
 
-    colorschemes.tokyonight.enable = true;
+    colorschemes.tokyonight = {
+      enable = true;
+      settings = {
+        transparent = true;
+        styles = {
+          sidebars = "transparent";
+          floats = "transparent";
+        };
+      };
+    };
     colorscheme = "tokyonight";
 
     plugins = {
