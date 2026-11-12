@@ -6,7 +6,8 @@
     vscode
     nautilus
     mpv
-    obsidian
+    pandoc
+    texlive.combined.scheme-small
     loupe
     libreoffice
     unzip

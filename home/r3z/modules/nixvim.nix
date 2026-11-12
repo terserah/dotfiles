@@ -73,6 +73,27 @@
         };
       };
 
+      toggleterm = {
+        enable = true;
+        settings = {
+          direction = "float";
+          size = 20;
+          open_mapping = "[[<c-\\>]]";
+          start_in_insert = true;
+          shade_terminals = false;
+          persist_size = true;
+          persist_mode = true;
+          float_opts = {
+            border = "curved";
+            width = 120;
+            height = 30;
+            winblend = 0;
+          };
+        };
+      };
+
+      lazygit.enable = true;
+
       treesitter = {
         enable = true;
         highlight.enable = true;
@@ -203,6 +224,42 @@
       }
       {
         mode = "n";
+        key = "<leader>tt";
+        action = "<cmd>ToggleTerm direction=float<cr>";
+        options.desc = "Toggle floating terminal";
+      }
+      {
+        mode = "n";
+        key = "<leader>th";
+        action = "<cmd>ToggleTerm direction=horizontal<cr>";
+        options.desc = "Toggle horizontal terminal";
+      }
+      {
+        mode = "n";
+        key = "<leader>tv";
+        action = "<cmd>ToggleTerm direction=vertical<cr>";
+        options.desc = "Toggle vertical terminal";
+      }
+      {
+        mode = "n";
+        key = "<leader>gg";
+        action = "<cmd>LazyGit<cr>";
+        options.desc = "Lazygit (commit, push, pull, branch)";
+      }
+      {
+        mode = "n";
+        key = "<leader>gf";
+        action = "<cmd>LazyGitCurrentFile<cr>";
+        options.desc = "Lazygit for current file";
+      }
+      {
+        mode = "n";
+        key = "<leader>gl";
+        action = "<cmd>LazyGitFilter<cr>";
+        options.desc = "Lazygit log";
+      }
+      {
+        mode = "n";
         key = "<leader>bd";
         action = "<cmd>bdelete<cr>";
         options.desc = "Delete buffer";
@@ -217,7 +274,7 @@
 
     extraPackages = with pkgs; [
       fd
-      lazygit
+      neovim-remote
       nixfmt
       ripgrep
       stylua
