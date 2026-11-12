@@ -61,15 +61,14 @@
       lualine.enable = true;
       gitsigns.enable = true;
       which-key.enable = true;
-      telescope.enable = true;
-
-      neo-tree = {
+      telescope = {
         enable = true;
-        settings = {
-          close_if_last_window = true;
-          filesystem = {
-            follow_current_file.enabled = true;
-            filtered_items.visible = true;
+        extensions.file-browser = {
+          enable = true;
+          settings = {
+            hijack_netrw = true;
+            hidden = true;
+            respect_gitignore = true;
           };
         };
       };
@@ -193,8 +192,14 @@
       {
         mode = "n";
         key = "<leader>e";
-        action = "<cmd>Neotree toggle<cr>";
-        options.desc = "Toggle file explorer";
+        action = "<cmd>Telescope file_browser<cr>";
+        options.desc = "File browser (c: create, r: rename, d: delete)";
+      }
+      {
+        mode = "n";
+        key = "<leader>E";
+        action = "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>";
+        options.desc = "File browser at current file";
       }
       {
         mode = "n";
