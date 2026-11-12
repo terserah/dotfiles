@@ -6,10 +6,7 @@
     vscode
     nautilus
     mpv
-
-    pandoc
-    textliveFull
-
+    obsidian
     loupe
     libreoffice
     unzip
