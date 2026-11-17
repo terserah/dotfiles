@@ -9,6 +9,8 @@
     ./modules/zsh.nix
     ./modules/git.nix
     ./modules/packages.nix
+    ./modules/niri
+    ./modules/screenshot.nix
   ];
 
   home.username = "r3z";
